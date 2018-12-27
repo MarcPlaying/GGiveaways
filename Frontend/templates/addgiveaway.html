@@ -1,0 +1,55 @@
+<#include "base.html">
+<#if loggedin == "true">
+<br>
+<div class="ui raised very padded text container segment">
+
+   
+		
+  <form id="login-form" class="form" method="post" action="/addgiveaway">
+
+    <div class="ui form">
+
+    <div class="field">
+      <label>Enabled: 0 = false, 1 = true</label>
+      <input class="input is-rounded" tabindex="1" type="text" name="enabled" placeholder="0/1" value="" required>
+      
+    </div>
+
+    <div class="field">
+        <label>Image (Direct Link to Image)</label>
+        <input class="input is-rounded" tabindex="1" type="text" name="image" placeholder="url" value="" required>
+        
+      </div>
+
+      <div class="field">
+          <label>Title</label>
+          <input class="input is-rounded" tabindex="1" type="text" name="title" placeholder="title" value="" required>
+          
+        </div>
+
+        <div class="field">
+            <label>Description</label>
+            <input class="input is-rounded" tabindex="1" type="text" name="description" placeholder="Description" value="" required>
+            
+          </div>
+          <div class="field">
+              <label>Giveaway (Gleam Embed)</label>
+              <input class="input is-rounded" tabindex="1" type="text" name="giveaway" placeholder="Giveaway" value="" required>
+              
+            </div>
+    
+  </div>
+
+  </form>
+  <br>
+  <div class="ui right aligned segment">
+  <button tabindex="3" class="button is-linkn" type="submit" form="login-form">Login</button>
+</div>
+</div>
+
+</div>
+</div>
+</body>
+</html>
+</#if>	
+<#include "footer.html">

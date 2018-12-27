@@ -1,0 +1,8 @@
+{
+	"sparkport": "88",
+	"mysqlip": "localhost",
+	"mysqlusername": "root",
+	"mysqlport": "3306",
+	"mysqldatabase": "giveway",
+	"mysqlpassword": ""
+}

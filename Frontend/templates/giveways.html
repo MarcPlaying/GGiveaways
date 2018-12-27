@@ -1,0 +1,50 @@
+<#include "base.html">
+<br>
+<div class="ui container">
+	<#list giveway>
+	<#if loggedin == "true">
+					<a href="/addgiveaway"><button class="ui fluid basic button">
+							<i class="fas fa-plus-square"></i>
+							Create Giveaway
+						</button></a>
+						<br>
+					</#if>
+	<div class="ui raised very padded text center aligned segment container segment">
+		<h1>Our Giveaways</h1>
+
+		
+
+			<div class="ui special cards">
+
+						
+
+		<#items as changelogitem>
+			<div class="ui card">
+				  <div class="image">
+					<img src="${changelogitem.image}">
+				  </div>
+				  <div class="content">
+					<a class="header">${changelogitem.title}</a>
+					<div class="description">
+					  ${changelogitem.description}
+					</div>
+				  </div>
+				  <div class="extra content">
+							<a href="/view?id=${changelogitem.ID}"><button class="fluid ui blue button">Do Giveaway</button></a>
+				  </div>
+				</div>
+		</#items>
+		</div>
+		
+	<#else>
+	  <p>No Giveways are running right now</p>
+	</#list>
+</div>
+  
+</div>
+
+</div>
+
+</body>
+</html>
+<#include "footer.html">

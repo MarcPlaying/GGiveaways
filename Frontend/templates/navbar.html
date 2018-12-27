@@ -1,0 +1,31 @@
+<div class="ui secondary fixed-height stackable white background main menu no margin bottom" id="navbar">
+	<div class="ui container">
+ <style>
+ .logo {
+	max-height: 40px;
+	max-width: 40px;
+ }
+
+ .menu {
+	 background-color: #4e5d6c;
+ }
+
+ </style>
+		<div class="item">
+			<b><a href="/" title="Home page"><img class="ripple logo" src="http://www.lequzhai.com/data/out/8/482257.ico" alt="GG"></a></b>
+		</div>
+		
+		<a class="item" href="/home">Home</a>
+		<a class="item" href="/giveways">Giveaways</a>
+			
+		<a class="item" href="https://discord.gg/mVkpgyh"><i class="fab fa-discord"></i>&nbsp;Discord</a>
+		<a class="item" href="https://discord.gg/mVkpgyh"><i class="fab fa-adversal"></i>&nbsp;Become a Partner</a>
+
+		<#if loggedin == "false">
+		<a class="item" href="/login"><i class="fas fa-key"></i>&nbsp;Login</a>
+		<#else>
+		<a class="item" href="/logout"><i class="fas fa-key"></i>&nbsp;Logout</a>
+		</#if>	
+
+		</div>
+</div>
