@@ -79,7 +79,7 @@ public class Site {
 		getroutes.add(new Home("/home"));
 		getroutes.add(new Giveaways("/giveways"));
 		
-		//HANDLE TEMPLATES
+		//HANDLE SIMPLE TEMPLATES
 		for(final File file : alltemplates) {
 			if(!file.isDirectory() && !ignorelist.contains(file)) {
 					getroutes.add(new SimpleTemplates(file.getName().replaceAll(".html", ""), file));
@@ -87,12 +87,12 @@ public class Site {
 		}
 		
 		for(Route r : getroutes) {
-			u.s.println("Registered Route " + r.toString());
+			u.s.println("Registered GET Route " + r.toString());
 			Spark.get(r);
 		}
 		
 		for(Route r : postroutes) {
-			u.s.println("Registered Route " + r.toString());
+			u.s.println("Registered POST Route " + r.toString());
 			Spark.post(r);
 		}
 		
