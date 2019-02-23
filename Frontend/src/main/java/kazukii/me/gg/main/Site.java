@@ -56,6 +56,8 @@ public class Site {
 		cfg.setLogTemplateExceptions(false);
 		cfg.setWrapUncheckedExceptions(true);
 		
+		Spark.externalStaticFileLocation("static/");
+		
 		File templates = new File("templates/");
 		
 		

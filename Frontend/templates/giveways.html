@@ -1,14 +1,15 @@
 <#include "base.html">
 <div class="ui margined container" id="messages-container">
 <div class="ui container"></div>
-	<#list giveway>
 	<#if loggedin == "true">
-					<a href="/addgiveaway"><button class="ui fluid basic button">
-							<i class="fas fa-plus-square"></i>
-							Create Giveaway
-						</button></a>
-						<br>
-					</#if>
+	<a href="/addgiveaway"><button class="ui fluid basic button">
+			<i class="fas fa-plus-square"></i>
+			Create Giveaway
+		</button></a>
+		<br>
+	</#if>
+	<#list giveway>
+
 	<div class="ui segment">
 		<h1>Our Giveaways</h1>
 			<div class="ui special cards">

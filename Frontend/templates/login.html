@@ -1,13 +1,22 @@
 <#include "base.html">
-<br>
+<div class="ui margined container" id="messages-container">
+<div class="ui icon message">
+  <i class="comment-alt"></i>
+  <div class="content">
+    <div class="header">
+      Important
+    </div>
+    <p>At the time the login is only for team members, please be patient for own user Accounts</p>
+  </div>
+</div>
 <div class="ui raised very padded text container segment">
-
+<h2>Login</h2>
   <form id="login-form" class="form" method="post" action="/login">
 
     <div class="ui form">
 
     <div class="field">
-      <label>Username (or email)</label>
+      <label>Username</label>
       <input class="input is-rounded" tabindex="1" type="text" name="username" placeholder="Username" value="" required>
       
     </div>
@@ -21,11 +30,12 @@
 
   </form>
   <br>
-  <div class="ui right aligned segment">
-  <button tabindex="3" class="button is-linkn" type="submit" form="login-form">Login</button>
+  <div class="ui right aligned container">
+  <button tabindex="3" class="ui primary button" type="submit" form="login-form">Sign in</button>
 </div>
 </div>
 
+</div>
 </div>
 </div>
 </body>
