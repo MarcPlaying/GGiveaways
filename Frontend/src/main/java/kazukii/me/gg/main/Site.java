@@ -16,6 +16,7 @@ import freemarker.template.TemplateExceptionHandler;
 import kazukii.me.gg.configs.Config;
 import kazukii.me.gg.configs.u;
 import kazukii.me.gg.sites.get.Delete;
+import kazukii.me.gg.sites.get.Docs;
 import kazukii.me.gg.sites.get.Giveaways;
 import kazukii.me.gg.sites.get.Hide;
 import kazukii.me.gg.sites.get.Home;
@@ -59,14 +60,15 @@ public class Site {
 		Spark.externalStaticFileLocation("static/");
 		
 		File templates = new File("templates/");
-		
+		File websitedocs = new File("website-docs/");
 		
 		if(!templates.exists())templates.mkdirs();
-		
+		if(!websitedocs.exists())websitedocs.mkdirs();
 		
 		cfg.setDirectoryForTemplateLoading(templates);
 		
 		File[] alltemplates = templates.listFiles();
+		File[] alldocs = websitedocs.listFiles();
 		
 		ignorelist.add(new File("templates/base.html"));
 		ignorelist.add(new File("templates/footer.html"));
@@ -74,6 +76,7 @@ public class Site {
 		ignorelist.add(new File("templates/view.html"));
 		ignorelist.add(new File("templates/giveways.html"));
 		ignorelist.add(new File("templates/home.html"));
+		ignorelist.add(new File("templates/doc.html"));
 		
 		// Init routes
 		postroutes.add(new AddGiveaway("/addgiveaway"));
@@ -88,6 +91,11 @@ public class Site {
 		getroutes.add(new Home("/"));
 		getroutes.add(new Home("/home"));
 		getroutes.add(new Giveaways("/giveways"));
+		
+		for(final File file : alldocs) {
+				getroutes.add(new Docs("/doc/"+file.getName().replaceAll(".md", ""), file));
+			
+		}
 		
 		//HANDLE TEMPLATES
 		for(final File file : alltemplates) {

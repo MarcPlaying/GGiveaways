@@ -39,8 +39,13 @@ public class Giveaways extends Route{
 		}
 		
 		ArrayList<Giveway> neww = new ArrayList<Giveway>(); 
+		String sqqqll;
 		
-		String sqqqll = "SELECT * FROM `giveways` WHERE `enabled` = 1";
+		if(hasPermissions) {
+			sqqqll = "SELECT * FROM `giveways`";
+		}else {
+			sqqqll = "SELECT * FROM `giveways` WHERE `enabled` = 1";
+		}
 		Statement stmt2 = null;
 		try {
 			stmt2 = Site.connection.createStatement();

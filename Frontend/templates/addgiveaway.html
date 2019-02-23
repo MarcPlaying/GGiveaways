@@ -2,28 +2,26 @@
 <#if loggedin == "true">
 <br>
 <div class="ui raised very padded text container segment">
-
-   
-		
+	<h1 class="ui header">Create a giveaway!</h1>
   <form id="login-form" class="form" method="post" action="/addgiveaway">
 
     <div class="ui form">
 
     <div class="field">
       <label>Enabled: 0 = false, 1 = true</label>
-      <input class="input is-rounded" tabindex="1" type="text" name="enabled" placeholder="0/1" value="" required>
+      <input class="input is-rounded" tabindex="1" type="text" name="enabled" placeholder="State (int)" value="" required>
       
     </div>
 
     <div class="field">
         <label>Image (Direct Link to Image)</label>
-        <input class="input is-rounded" tabindex="1" type="text" name="image" placeholder="url" value="" required>
+        <input class="input is-rounded" tabindex="1" type="text" name="image" placeholder="URL" value="" required>
         
       </div>
 
       <div class="field">
           <label>Title</label>
-          <input class="input is-rounded" tabindex="1" type="text" name="title" placeholder="title" value="" required>
+          <input class="input is-rounded" tabindex="1" type="text" name="title" placeholder="Title" value="" required>
           
         </div>
 
@@ -42,8 +40,8 @@
 
   </form>
   <br>
-  <div class="ui right aligned segment">
-  <button tabindex="3" class="button is-linkn" type="submit" form="login-form">Login</button>
+  <div class="ui right aligned container">
+  <button tabindex="3" class="ui primary button" type="submit" form="login-form">Submit</button>
 </div>
 </div>
 
