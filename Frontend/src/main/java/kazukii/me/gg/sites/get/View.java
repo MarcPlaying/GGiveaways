@@ -10,6 +10,7 @@ import java.util.Map;
 
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
+import kazukii.me.gg.content.Giveway;
 import kazukii.me.gg.main.Site;
 import kazukii.me.gg.sites.Permission;
 import spark.Request;
@@ -42,6 +43,9 @@ public class View extends Route{
 						m.put("timestamp", rs.getString("Timestamp"));
 						m.put("id", rs.getString("id"));
 						m.put("enabled", rs.getString("enabled"));
+						m.put("views", rs.getInt("views"));
+						
+						Giveway.addView(rs.getInt("id"));
 						
 						Permission.hasPermissions(request.cookie("session"),m);
 						
