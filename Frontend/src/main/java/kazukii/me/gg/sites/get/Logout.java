@@ -15,7 +15,7 @@ public class Logout extends Route{
 		
 		response.removeCookie("session");
 		
-		response.redirect("/");
+		response.redirect("/?a=Logout complete");
 		return "";
 	}
 	

@@ -29,10 +29,11 @@ public class Login extends Route{
 				response.cookie("session", rs.getString("cookie"));
 			}
 		
-		response.redirect("/");
+		response.redirect("/?a=Welcome back "+ username+ "!");
 		return "";
 		
-		}catch(Exception e) {
+		} catch(Exception e) {
+			response.redirect("/?a=Oh, a error perhaps while logging in, report this to a PeerStudios Developer");
 			return "SQL Exception: Check your SQL Syntax at PreparedStatement File Login.java Line 26";
 		}
 		

@@ -1,6 +1,6 @@
 <#include "base.html">
-<br>
-<div class="ui container">
+<div class="ui margined container" id="messages-container">
+<div class="ui container"></div>
 	<#list giveway>
 	<#if loggedin == "true">
 					<a href="/addgiveaway"><button class="ui fluid basic button">
@@ -9,15 +9,9 @@
 						</button></a>
 						<br>
 					</#if>
-	<div class="ui raised very padded text center aligned segment container segment">
+	<div class="ui segment">
 		<h1>Our Giveaways</h1>
-
-		
-
 			<div class="ui special cards">
-
-						
-
 		<#items as changelogitem>
 			<div class="ui card">
 				  <div class="image">
@@ -35,7 +29,6 @@
 				</div>
 		</#items>
 		</div>
-		
 	<#else>
 	  <p>No Giveways are running right now</p>
 	</#list>
@@ -44,7 +37,7 @@
 </div>
 
 </div>
-
+</div>
 </body>
 </html>
 <#include "footer.html">

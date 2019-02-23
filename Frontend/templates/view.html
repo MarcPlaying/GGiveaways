@@ -1,4 +1,5 @@
 <#include "base.html">
+<#if loggedin == "false">
 <br>
 
 <div class="ui raised very padded text container segment">
@@ -25,6 +26,54 @@
 
   <p>${timestamp}</p>
 </div>
+
+<#else>
+<div class="ui margined container" id="messages-container">
+<div class="ui stackable grid">
+  <div class="four wide column">
+    <div class="ui fluid vertical menu">
+      <a class="item" href="/delete?id=${id}">Delete Giveaway</a>
+      <a class="item" href="/edit?id=${id}">Edit</a>
+      <a class="item" href="/post?id=${id}">Post to Discord</a>
+      <#if enabled == "1">
+      <a class="item" href="/hide?id=${id}">Hide</a>
+      <#else>
+      <a class="item" href="/show?id=${id}">Show</a>
+      </#if>
+    </div>
+  </div>
+  
+      <div class="twelve wide column">
+        <div class="ui segment">
+         
+          <img src="${image}" alt="" class="responsive">
+
+        <style>
+          .responsive {
+            width: 100%;
+            height: auto;
+          }
+
+          *{margin:0;padding:0;border:none;}
+          html,iframe,body{width:100%;height:100%;}
+          html{overflow:hidden}
+          @media screen and (-webkit-min-device-pixel-ratio:0) {
+            html,iframe,body{min-height:100%;}
+          }
+          </style>
+
+        <h2>${titlebar}</h2>
+        <p>${description}</p>
+
+        ${giveway}
+
+        <p>${timestamp}</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</#if>
 </div>
 </body>
 </html>

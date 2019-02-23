@@ -15,14 +15,18 @@ import freemarker.template.Configuration;
 import freemarker.template.TemplateExceptionHandler;
 import kazukii.me.gg.configs.Config;
 import kazukii.me.gg.configs.u;
+import kazukii.me.gg.sites.get.Delete;
 import kazukii.me.gg.sites.get.Giveaways;
+import kazukii.me.gg.sites.get.Hide;
 import kazukii.me.gg.sites.get.Home;
 import kazukii.me.gg.sites.get.Logout;
+import kazukii.me.gg.sites.get.Post;
+import kazukii.me.gg.sites.get.PostLatestGiveaway;
+import kazukii.me.gg.sites.get.Show;
 import kazukii.me.gg.sites.get.SimpleTemplates;
 import kazukii.me.gg.sites.get.View;
 import kazukii.me.gg.sites.post.AddGiveaway;
 import kazukii.me.gg.sites.post.Login;
-import kazukii.me.gg.sites.post.PostLatestGiveaway;
 import spark.Route;
 import spark.Spark;
 
@@ -72,6 +76,10 @@ public class Site {
 		// Init routes
 		postroutes.add(new AddGiveaway("/addgiveaway"));
 		postroutes.add(new Login("/login"));
+		getroutes.add(new Delete("/delete"));
+		getroutes.add(new Post("/post"));
+		getroutes.add(new Show("/show"));
+		getroutes.add(new Hide("/hide"));
 		getroutes.add(new Logout("/logout"));
 		getroutes.add(new PostLatestGiveaway("/postlatestgiveaway"));
 		getroutes.add(new View("/view"));

@@ -1,12 +1,59 @@
 <#include "base.html">
-<br>
-<div class="ui raised very padded text center aligned segment container segment">
+<div class="ui margined container" id="messages-container">
+<#if alert == "">
+<#else>
+<div class="ui icon message">
+  <i class="comment-alt"></i>
+  <div class="content">
+    <div class="header">
+      Alert
+    </div>
+    <p>${alert}</p>
+  </div>
+</div>
+</#if>
+
+<div class="ui center aligned segment">
 		<img src="http://www.lequzhai.com/data/out/8/482257.ico" style="max-width: 100%;">
 </div>
-<div class="ui raised very padded text container segment">
+<div class="ui segment">
   <h2 class="ui header">Win Steam or Itch.IO Keys with GGiveways!</h2>
   <p></p>
   <p>With this site you can easily get some Keys that you can Reedem or Give some of your Friend. Admins will restock Keys every week. This Service is new so give it a Chance</p>
+</div>
+
+<div class="ui right aligned segment" style="">
+  <table class="ui very basic collapsing celled table" style="width: 100%; height: auto;">
+  <thead>
+  <tr>
+  <th style="color: white;" align="center">Latest Giveaways</th>
+  </tr>
+  </thead>
+  <#list giveway>
+  <#items as changelogitem>
+
+  <tbody>
+  <tr>
+  <td style="display: flex; align-items: center;">
+  <img style="height: 50px; width: auto;" logo="preview-627629" src="${changelogitem.image}" class="ui mini rounded image">
+  <div style="margin-left: 5px; width: 100%;" class="content">
+  <div style="font-size: 13px">${changelogitem.title}</div>
+  <a href="/view?id=${changelogitem.ID}">Go to giveaway!</a>
+  </div>
+  </td>
+  </tr>
+  </tbody>
+
+  </#items>
+  <#else>
+    <thead>
+    <tr>
+    <th style="color: white;" align="center">No Giveaways are running yet!</th>
+    </tr>
+    </thead>
+	</#list>
+  </table>
+  </div>
 </div>
 </div>
 </body>

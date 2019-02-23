@@ -1,4 +1,4 @@
-package kazukii.me.gg.sites.post;
+package kazukii.me.gg.sites.get;
 
 import java.awt.Color;
 import java.sql.PreparedStatement;
@@ -36,6 +36,7 @@ public class PostLatestGiveaway extends Route{
 		Thread t = new Thread(sendEmbed());
 		t.start();
 		
+		response.redirect("/?a=Embed is in sending queue");
 		return "done";
 	}
 	

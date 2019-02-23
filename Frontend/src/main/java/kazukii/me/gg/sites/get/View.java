@@ -41,6 +41,7 @@ public class View extends Route{
 						m.put("giveway", rs.getString("Giveway"));
 						m.put("timestamp", rs.getString("Timestamp"));
 						m.put("id", rs.getString("id"));
+						m.put("enabled", rs.getString("enabled"));
 						
 						Permission.hasPermissions(request.cookie("session"),m);
 						

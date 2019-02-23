@@ -54,7 +54,8 @@ public class AddGiveaway extends Route{
 		    	
 	    	}
 
-		return "soos";
+	    response.redirect("/?a=Giveaway "+title+" was created");
+		return "";
 	
 	
 }
