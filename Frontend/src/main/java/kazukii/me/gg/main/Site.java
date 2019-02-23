@@ -79,7 +79,7 @@ public class Site {
 		getroutes.add(new Home("/home"));
 		getroutes.add(new Giveaways("/giveways"));
 		
-		//HANDLE SIMPLE TEMPLATES
+		//HANDLE TEMPLATES
 		for(final File file : alltemplates) {
 			if(!file.isDirectory() && !ignorelist.contains(file)) {
 					getroutes.add(new SimpleTemplates(file.getName().replaceAll(".html", ""), file));
@@ -87,12 +87,12 @@ public class Site {
 		}
 		
 		for(Route r : getroutes) {
-			u.s.println("Registered GET Route " + r.toString());
+			u.s.println("Registered Route " + r.toString());
 			Spark.get(r);
 		}
 		
 		for(Route r : postroutes) {
-			u.s.println("Registered POST Route " + r.toString());
+			u.s.println("Registered Route " + r.toString());
 			Spark.post(r);
 		}
 		
@@ -108,7 +108,6 @@ public class Site {
 		}
  
 		try {
-			// DriverManager: The basic service for managing a set of JDBC drivers.
 			connection = DriverManager.getConnection("jdbc:mysql://" + Config.getString("mysqlip")+":"+ Config.getString("mysqlport")+"/"+Config.getString("mysqldatabase"), Config.getString("mysqlusername"), Config.getString("mysqlpassword"));
 		} catch (SQLException e) {
 			e.printStackTrace();

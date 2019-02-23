@@ -31,7 +31,7 @@ public class Giveaways extends Route{
 	public Object handle(Request request, Response response) {
 		m.put("titlebar", "Giveaways");
 		
-		Boolean hasPermissions = Permission.hasPermissions(request.cookie("session"));
+		Boolean hasPermissions = Permission.hasPermissions(request.cookie("session"), m);
 		if(hasPermissions) {
 			m.put("loggedin", "true");
 		}else {

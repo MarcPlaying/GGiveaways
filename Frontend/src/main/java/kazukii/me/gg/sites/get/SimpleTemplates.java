@@ -32,14 +32,8 @@ public class SimpleTemplates extends Route{
 		
 		m.put("titlebar", bar);
 		
-		Boolean hasPermissions = Permission.hasPermissions(request.cookie("session"));
-		if(hasPermissions) {
-			m.put("loggedin", "true");
-		}else {
-			m.put("loggedin", "false");
-		
-		}
-		
+		Permission.hasPermissions(request.cookie("session"), m);
+
 		try {
 	        Template template = Site.cfg.getTemplate(file.getName());
 	        Writer out = new StringWriter();

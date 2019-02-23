@@ -26,12 +26,7 @@ public class Home extends Route{
 	public Object handle(Request request, Response response) {
 		m.put("titlebar", "Home");
 		
-		Boolean hasPermissions = Permission.hasPermissions(request.cookie("session"));
-		if(hasPermissions) {
-			m.put("loggedin", "true");
-		}else {
-			m.put("loggedin", "false");
-		}
+		Permission.hasPermissions(request.cookie("session"), m);
 		
 		try {
 	        Template template = Site.cfg.getTemplate("home.html");

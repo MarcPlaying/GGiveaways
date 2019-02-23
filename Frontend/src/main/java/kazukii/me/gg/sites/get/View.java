@@ -42,13 +42,7 @@ public class View extends Route{
 						m.put("timestamp", rs.getString("Timestamp"));
 						m.put("id", rs.getString("id"));
 						
-						Boolean hasPermissions = Permission.hasPermissions(request.cookie("session"));
-						if(hasPermissions) {
-							m.put("loggedin", "true");
-						}else {
-							m.put("loggedin", "false");
-						}
-						
+						Permission.hasPermissions(request.cookie("session"),m);
 						
 						try {
 					        Template template = Site.cfg.getTemplate("view.html");

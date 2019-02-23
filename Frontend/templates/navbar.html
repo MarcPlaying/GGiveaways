@@ -22,9 +22,10 @@
 		<a class="item" href="https://discord.gg/mVkpgyh"><i class="fab fa-adversal"></i>&nbsp;Become a Partner</a>
 
 		<#if loggedin == "false">
-		<a class="item" href="/login"><i class="fas fa-key"></i>&nbsp;Login</a>
+		<a class="item right aligned" href="/login"><i class="fas fa-key"></i>&nbsp;Login</a>
 		<#else>
-		<a class="item" href="/logout"><i class="fas fa-key"></i>&nbsp;Logout</a>
+		
+		<a class="item right aligned" href="/logout"><i class="fas fa-key"></i>&nbsp;${username}</a>
 		</#if>	
 
 		</div>
